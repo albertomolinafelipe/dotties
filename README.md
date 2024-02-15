@@ -12,6 +12,17 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 cp ~/dotties/shell/.p10k.zsh ~
 ```
+ - Install more dependencies abd fonts
+```bash
+sudo apt install feh curl
+curl -OJL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Gohu.zip
+curl -OJL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
+mkdir hack && unzip Hack.zip && mv *.ttf hack
+mkdir gohu && unzip Gohu.zip && mv *.ttf gohu
+sudo mv hack /usr/local/share/fonts/
+sudo mv gohu /usr/local/share/fonts/
+rm Gohu.zip Hack.zip
+```
  - Move `.zshrc` and the rest of necesary files
 ```bash
 cp ~/dotties/shell/.xinitrc ~
@@ -27,15 +38,18 @@ sudo apt install xorg suckless-tools build-essential libx11-dev libxinerama-dev 
 ```
  - Compile
 ```bash
-cd ~/dotties/suckeless/dwm && sudo make clean install
-cd ~/dotties/suckeless/st && sudo make clean install
-cd ~/dotties/suckeless/slstatus && sudo make clean install
+cd ~/dotties/suckless/dwm && sudo make clean install
+cd ~/dotties/suckless/st && sudo make clean install
+cd ~/dotties/suckless/slstatus && sudo make clean install
 ```
 
 ## Editor
  - Download `nvim`
 ```bash
-# TODO
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+sudo mkdir -p /opt/nvim
+sudo mv nvim.appimage /opt/nvim/nvim
 ```
  - Clone packer
 ```bash
@@ -63,9 +77,21 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 ## Other programs
  - Signal
 ```bash
-TODO
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+  sudo tee /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop
 ```
  - Keepass
 ```bash
 sudo apt install keepassxc
 ```
+
+ - Other programs
+```bash
+sudo apt update && sudo apt install texlive-full neofetch htop
+```
+
+---
+I try to emulate [kanagawa nvim](https://github.com/rebelot/kanagawa.nvim) from rebelt
