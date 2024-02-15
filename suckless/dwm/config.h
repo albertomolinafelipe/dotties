@@ -14,10 +14,11 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char sumiInk1[]        = "#1F1F28";
 static const char sumiInk2[]        = "#2A2A37";
+static const char yellow[]          = "#F99E66";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, sumiInk2, sumiInk1 }, // gray red pink
+	[SchemeNorm] = { yellow, sumiInk2, sumiInk1 }, // gray red pink
 	[SchemeSel]  = { col_gray4, sumiInk1,  "#04FC00"  }, // ret orange green
 };
 
