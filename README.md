@@ -1,4 +1,4 @@
-<img src="https://github.com/albertomolinafelipe/dotties/blob/screenshot.png" alt="banner">
+![](screenshot.png)
 # Set up for Debian Machine
 
 ## Terminal
