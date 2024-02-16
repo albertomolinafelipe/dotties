@@ -1,5 +1,5 @@
-![](screenshot.png)
 # Set up for Debian Machine
+![](screenshot.png)
 
 ## Terminal
  - Change to `zsh`
