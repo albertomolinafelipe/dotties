@@ -67,7 +67,7 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ cpu_perc, " cpu  %s%% |", NULL    },
 	{ ram_perc, " ram %s%% |", NULL    },
-	{ wifi_essid, " wifi  %s", "wlo1"    },
+	{ wifi_essid, " wifi %s", "wlo1"    },
 	{ wifi_perc, " %s%% |", "wlo1"    },
 	{ run_command, " vol  %s |", "amixer sget Master | grep -Eo '[0-9]+%' | head -n1"},
 	{ battery_perc, " bat  %2s%% |", "BAT1"    },

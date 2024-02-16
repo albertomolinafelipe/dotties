@@ -67,11 +67,8 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = {"firefox", NULL};
 static const char *obsidiancmd[]  = {"obsidian", NULL};
 static const char *signalcmd[]  = {"signal-desktop", NULL};
-static const char *scrotcmd[] = {
-    "sh", "-c",
-    "scrot -s '/home/alberto/Desktop/Screenshots/%Y-%m-%d-%T.png' -e 'xclip -selection clipboard -t image/png -i $f'",
-    NULL
-};
+static const char *screenshotcmd[] = { "/bin/sh", "-c", "timestamp=$(date +%Y-%m-%d-%T) && import png:- | convert - -resize 200% ~/Desktop/Screenshots/${timestamp}.png && xclip -selection clipboard -target image/png -i ~/Desktop/Screenshots/${timestamp}.png", NULL };
+
 
 
 // Volumes
@@ -87,7 +84,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          {.v = obsidiancmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = signalcmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = scrotcmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshotcmd } },
 	{ ShiftMask, XK_F5, spawn, {.v = mutecmd } },
 	{ ShiftMask, XK_F6, spawn, {.v = voldowncmd } },
 	{ ShiftMask, XK_F7, spawn, {.v = volupcmd } },

@@ -1,3 +1,4 @@
+<img src="https://github.com/albertomolinafelipe/dotties/blob/screenshot.png" alt="banner">
 # Set up for Debian Machine
 
 ## Terminal
@@ -90,7 +91,7 @@ sudo apt install keepassxc
 
  - Other programs
 ```bash
-sudo apt update && sudo apt install texlive-full neofetch htop
+sudo apt update && sudo apt install texlive-full neofetch htop picom xclip 
 ```
 
 ---
