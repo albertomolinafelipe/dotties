@@ -7,7 +7,6 @@
  */
 static char *font = "HackNerdFontMono:pixelsize=23:antialias=true:autohint=true";
 static int borderpx = 0;
-
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
@@ -94,7 +93,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 0.97;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -127,7 +126,6 @@ static const char *colorname[] = {
 	"gray90", 	// FG
 	"#1F1F28",	// BG sumInk1
 };
-
 
 /*
  * Default colors (colorname index)
@@ -205,6 +203,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
